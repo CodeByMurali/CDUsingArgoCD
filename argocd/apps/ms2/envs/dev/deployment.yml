@@ -1,0 +1,16 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms2-deployment
+spec:
+  template:
+    spec:
+      containers:
+      - name: ms2
+        env:
+        - name: ENV
+          value: "dev"
+        - name: GPU_ENABLED
+          value: "1"
+      

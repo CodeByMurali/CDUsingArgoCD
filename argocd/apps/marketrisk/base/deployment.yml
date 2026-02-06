@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marketrisk-deployment
+  annotations:
+    codefresh.io/app: marketrisk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: marketrisk
+  template:
+    metadata:
+      labels:
+        app: marketrisk
+    spec:
+      containers:
+      - name: marketrisk
+        imagePullPolicy: Always
+        image: docker.io/kostiscodefresh/simple-env-app:1.0
+        ports:
+        - containerPort: 8080

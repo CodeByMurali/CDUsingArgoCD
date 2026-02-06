@@ -1,0 +1,16 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marketrisk-deployment
+spec:
+  template:
+    spec:
+      containers:
+      - name: marketrisk
+        env:
+        - name: ENV
+          value: "qa"
+        - name: GPU_ENABLED
+          value: "1"
+      

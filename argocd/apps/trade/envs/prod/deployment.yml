@@ -1,0 +1,16 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trade-deployment
+spec:
+  template:
+    spec:
+      containers:
+      - name: trade
+        env:
+        - name: ENV
+          value: "prod"
+        - name: GPU_ENABLED
+          value: "1"
+      

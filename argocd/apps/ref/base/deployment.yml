@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ref-deployment
+  annotations:
+    codefresh.io/app: ref
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ref
+  template:
+    metadata:
+      labels:
+        app: ref
+    spec:
+      containers:
+      - name: ref
+        imagePullPolicy: Always
+        image: docker.io/kostiscodefresh/simple-env-app:1.0
+        ports:
+        - containerPort: 8080

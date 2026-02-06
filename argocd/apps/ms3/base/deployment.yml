@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms3-deployment
+  annotations:
+    codefresh.io/app: ms3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms3
+  template:
+    metadata:
+      labels:
+        app: ms3
+    spec:
+      containers:
+      - name: ms3
+        imagePullPolicy: Always
+        image: docker.io/kostiscodefresh/simple-env-app:1.0
+        ports:
+        - containerPort: 8080
