@@ -1,21 +1,16 @@
-# Dev-specific overrides
-replicaCount: 1
+# QA-specific overrides for podinfo
+replicaCount: 2
 
 image:
-  tag: latest
+  tag: 6.5.4
 
 service:
-  type: ClusterIP  # No expensive LoadBalancer in Dev
-  ports:
-    http: 8080
+  type: ClusterIP
 
 resources:
   requests:
-    cpu: 10m
-    memory: 64Mi
-  limits:
     cpu: 100m
     memory: 128Mi
-
-autoscaling:
-  enabled: false # Disable HPA for qa
+  limits:
+    cpu: 500m
+    memory: 256Mi
