@@ -5,7 +5,7 @@ metadata:
   labels:
     app: helmapp
 spec:
-  replicas: 2 #replicas
+  replicas: 1
   selector:
     matchLabels:
       app: helmapp
