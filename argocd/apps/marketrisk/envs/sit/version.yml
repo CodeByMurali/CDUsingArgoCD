@@ -1,0 +1,11 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marketrisk-deployment
+spec:
+  template:
+    spec:
+      containers:
+      - name: marketrisk
+        image: docker.io/kostiscodefresh/simple-env-app:1.0
