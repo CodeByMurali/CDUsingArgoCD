@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
       - name: ms1
-        image: docker.io/kostiscodefresh/simple-env-app:1.5
+        image: docker.io/kostiscodefresh/simple-env-app:1.0
